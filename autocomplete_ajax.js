@@ -12,7 +12,7 @@ jQuery(document).ready(function($){
     //     },
     // });
 
-    $('#cari').autocomplete({
+    jQuery('#cari').autocomplete({
         source: function(request, response){
             $.ajax({
                 url: autoc_ajax.ajax_url,
@@ -21,8 +21,8 @@ jQuery(document).ready(function($){
                     'q': request.term
                 },
                 success:function(data){
-                    data = JSON.parse(data);
-                    let transform = $.map(data, function(el){
+                    // console.log(data);
+                    let transform = $.map(data.data, function(el){
                         // console.log(el)
                         return {
                             label:el.data,

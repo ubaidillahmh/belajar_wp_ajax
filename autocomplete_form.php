@@ -82,10 +82,15 @@
             $i++;
 
         endwhile;
-        
-        echo json_encode($data);
 
-        die();
+        $return = array(
+            'message'   => 'success',
+            'data'      => $data
+        );
+        
+        wp_send_json($return);
+
+        // wp_die();
     }
 
     // function autocomplete_jquery_script()
