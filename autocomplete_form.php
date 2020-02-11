@@ -47,9 +47,14 @@
 
     function autocomplete_jquery()
     {
-        wp_enqueue_script( 'jquery', plugins_url( 'js/jquery.min.js', __FILE__ ) );
-        wp_enqueue_script( 'jquery-ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.js' );
+        // wp_enqueue_script( 'jquery', plugins_url( 'js/jquery.min.js', __FILE__ ) );
+        // wp_enqueue_script( 'jquery-ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.js' );
+
+        // saya belum menenmukan yg jquery-ui-style nya mas 
         wp_enqueue_style( 'jquery-ui-style', '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css' );
+
+        wp_enqueue_script(array('json2', 'jquery', 'jquery-ui-core', 'jquery-ui-autocomplete'));
+
 
         wp_enqueue_script( 'autocomplete-ajax', plugins_url( 'autocomplete_ajax.js', __FILE__ ) );
         wp_localize_script( 'autocomplete-ajax', 'autoc_ajax', array( 'ajax_url' => admin_url( 'admin-ajax.php' )) );
